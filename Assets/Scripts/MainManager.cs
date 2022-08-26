@@ -37,7 +37,7 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
-        BestScoreText.text = $"Best Score : {DataManager.Instance.Name} : {DataManager.Instance.BestScore}";
+        BestScoreText.text = $"Best Score : {DataManager.Instance.BestName} : {DataManager.Instance.BestScore}";
     }
 
     private void Update()
@@ -74,6 +74,6 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
-        DataManager.Instance.BestScoreRecorder(m_Points);
+        DataManager.Instance.BestScoreRecorder(m_Points, DataManager.Instance.Name);
     }
 }
